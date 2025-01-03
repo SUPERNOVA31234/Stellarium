@@ -1,0 +1,96 @@
+body {
+    margin: 0; /* Remove a margem padrão do navegador */
+    font-family: Arial, sans-serif; /* Define a fonte do texto */
+    background: linear-gradient(180deg, #000428, #004e92); /* Gradiente de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+    overflow-x: hidden; /* Impede o transbordo horizontal */
+}
+
+header {
+    position: fixed; /* Cabeçalho fixo no topo */
+    top: 0; /* Posição no topo */
+    width: 100%; /* Largura completa */
+    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    display: flex; /* Layout flexível */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    z-index: 1000; /* Fica sobre outros elementos */
+}
+
+header nav a {
+    color: #fff; /* Cor dos links */
+    text-decoration: none; /* Remove o sublinhado */
+    margin: 0 1rem; /* Espaçamento entre os links */
+    transition: color 0.3s; /* Animação de cor suave */
+}
+
+header nav a:hover {
+    color: #00c6ff; /* Cor azul quando passa o mouse */
+}
+
+section {
+    padding: 100px 20px; /* Espaçamento interno (topo/bottomo 100px, laterais 20px) */
+    text-align: center; /* Centraliza o texto */
+}
+
+.hero {
+    height: 100vh; /* 100% da altura da janela */
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    background: url('https://source.unsplash.com/1600x900/?galaxy,space') no-repeat center center/cover; /* Imagem de fundo */
+    color: #fff; /* Cor do texto */
+}
+
+.hero h1 {
+    font-size: 4rem; /* Tamanho grande para o título */
+    margin: 0; /* Remove a margem */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra para destacar o título */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Tamanho de fonte para o parágrafo */
+    margin: 1rem 0; /* Espaçamento acima e abaixo */
+}
+
+.hero a {
+    display: inline-block; /* Faz o link se comportar como bloco */
+    padding: 0.75rem 1.5rem; /* Espaçamento interno do link */
+    background: #00c6ff; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Texto em negrito */
+    transition: background 0.3s; /* Transição suave no fundo */
+}
+
+.hero a:hover {
+    background: #005792; /* Cor de fundo quando o mouse passa sobre */
+}
+
+footer {
+    background: #000428; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto */
+    padding: 1rem 0; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.container {
+    display: flex; /* Usando flexbox para alinhar os itens horizontalmente */
+    justify-content: space-between; /* Espaça as caixas igualmente (opcional) */
+}
+
+.box {
+    width: 45%; /* Largura das caixas */
+    height: 250px; /* Altura das caixas */
+    background: rgba(0, 198, 255, 0.6); /* Cor de fundo azul com 60% de opacidade */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: flex; /* Define que o conteúdo da caixa será flexível */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center; /* Garante que o texto esteja centralizado */
+}
