@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Meu Site Galáctico</title>
-
+    <link rel="stylesheet" href="script.js">
+    <title>Stellarium</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -21,8 +22,20 @@
     <section class="hero">
         <h1>Bem-vindo ao Stellarium</h1>
         <p>Explorando possibilidades infinitas</p>
-        <a href="#sobre">Saiba Mais</a>
+        <a href="#projetos">Saiba Mais</a>
     </section>
+
+    <div id="Status">
+        <div class="chart-container">
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="chart2"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="chart3"></canvas> <!-- Posso copiar aqui e por mais status-->
+        </div>
+    </div>
 
     <section id="sobre">
         <h2>Sobre Mim</h2>
@@ -36,22 +49,18 @@
             <div class="box">Caixa 1</div>
             <div class="box">Caixa 2</div>
         </div>
-        
-        </section>
-        <!-- Adicione uma galeria ou lista de projetos aqui -->
     </section>
 
     <section id="depoimentos">
         <h2>Depoimentos</h2>
         <p>Veja o que as pessoas dizem sobre meu trabalho:</p>
-        <!-- Adicione depoimentos ou avaliações aqui -->
     </section>
 
     <section id="contato">
         <h2>Contato</h2>
         <p>Entre em contato comigo para pedidos ou colaborações:</p>
         <form>
-            <input type="text" placeholder="Seu Nome" required style="padding: 0.5rem; margin: 0.5rem; width: 80%; max-width: 300px;"><br>
+            <input type="text" placeholder="Seu nome" required style="padding: 0.5rem; margin: 0.5rem; width: 80%; max-width: 300px;"><br>
             <input type="email" placeholder="Seu Email" required style="padding: 0.5rem; margin: 0.5rem; width: 80%; max-width: 300px;"><br>
             <textarea placeholder="Sua Mensagem" required style="padding: 0.5rem; margin: 0.5rem; width: 80%; max-width: 300px; height: 100px;"></textarea><br>
             <button type="submit" style="padding: 0.75rem 1.5rem; background: #00c6ff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
@@ -61,5 +70,107 @@
     <footer>
         <p>&copy; 2025 Galáctico - Todos os Direitos Reservados</p>
     </footer>
+
+    <script>
+        const config1 = {
+            type: 'doughnut',
+            data: {
+                labels: ['Trabalho Completo',  ''],
+                datasets: [{
+                    data: [1, 99],
+                    backgroundColor: ['#000000', '#e0e0e0']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        };
+
+        const config2 = {
+            type: 'doughnut',
+            data: {
+                labels: ['Clientes Atendidos', ''],
+                datasets: [{
+                    data: [1, 99],
+                    backgroundColor: ['#4caf50', '#e0e0e0']
+                }]
+            },
+            options: config1.options
+        };
+
+        const config3 = {
+            type: 'doughnut',
+            data: {
+                labels: ['Horas Trabalhadas', 'Horas Restantes'],
+                datasets: [{
+                    data: [3, 97],
+                    backgroundColor: ['#ff9800', '#e0e0e0']
+                }]
+            },
+            options: config1.options
+        };
+
+        const config4 = {
+            type: 'doughnut',
+            data: {
+                labels: ['Positivo', 'Negativo'],
+                datasets: [{
+                    data: [90, 10],
+                    backgroundColor: ['#f44336', '#e0e0e0']
+                }]
+            },
+            options: config1.options
+        };
+
+        new Chart(document.getElementById('chart1'), config1);
+        new Chart(document.getElementById('chart2'), config2);
+        new Chart(document.getElementById('chart3'), config3);
+        new Chart(document.getElementById('chart4'), config4);
+
+        
+        let lastScrollPosition = 0; // Armazena a posição da rolagem anterior
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        const currentScrollPosition = window.pageYOffset;
+
+        if (currentScrollPosition > lastScrollPosition) {
+            // Se estiver rolando para baixo, esconde o cabeçalho
+            header.classList.add('hidden');
+        } else if (currentScrollPosition === 0) {
+            // Se estiver no topo, mostra o cabeçalho
+            header.classList.remove('hidden');
+        }
+
+        lastScrollPosition = currentScrollPosition; // Atualiza a posição da rolagem
+    });
+
+
+    </script>
+<div class="social-buttons">
+    <a  href="https://wa.me/48998051100?text=Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!" 
+        class="social-button whatsapp" 
+        target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp">
+    </a>
+ 
+    <a href="https://www.facebook.com/lucas.duartemedeiros.5/" 
+       class="social-button facebook" 
+       target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/ego7x_/" 
+       class="social-button instagram" 
+       target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+</div>
+ </a>
+
 </body>
 </html>
