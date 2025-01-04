@@ -1,96 +1,211 @@
 body {
-    margin: 0; /* Remove a margem padrão do navegador */
-    font-family: Arial, sans-serif; /* Define a fonte do texto */
-    background: linear-gradient(180deg, #000428, #004e92); /* Gradiente de fundo */
-    color: #fff; /* Define a cor do texto como branco */
-    overflow-x: hidden; /* Impede o transbordo horizontal */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #000428, #004e92);
+    color: #fff;
+    overflow: hidden; /* Impede o navegador de exibir qualquer barra de rolagem */
+}
+
+html {
+    overflow-y: scroll; /* Permite rolar verticalmente, mas sem exibir a barra */
+    scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
 }
 
 header {
-    position: fixed; /* Cabeçalho fixo no topo */
-    top: 0; /* Posição no topo */
-    width: 100%; /* Largura completa */
-    background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
-    padding: 1rem 2rem; /* Espaçamento interno */
-    display: flex; /* Layout flexível */
-    justify-content: space-between; /* Espaço entre os itens */
-    align-items: center; /* Alinha os itens verticalmente no centro */
-    z-index: 1000; /* Fica sobre outros elementos */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Suaviza a transição ao ocultar o cabeçalho */
+}
+
+header.hidden {
+    top: -100px; /* Move o cabeçalho para fora da tela */
 }
 
 header nav a {
-    color: #fff; /* Cor dos links */
-    text-decoration: none; /* Remove o sublinhado */
-    margin: 0 1rem; /* Espaçamento entre os links */
-    transition: color 0.3s; /* Animação de cor suave */
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s;
 }
 
 header nav a:hover {
-    color: #00c6ff; /* Cor azul quando passa o mouse */
+    color: #00c6ff;
 }
 
+
 section {
-    padding: 100px 20px; /* Espaçamento interno (topo/bottomo 100px, laterais 20px) */
-    text-align: center; /* Centraliza o texto */
+    padding: 100px 20px;
+    text-align: center;
 }
 
 .hero {
-    height: 100vh; /* 100% da altura da janela */
-    display: flex; /* Layout flexível */
-    flex-direction: column; /* Organiza os itens verticalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    background: url('https://source.unsplash.com/1600x900/?galaxy,space') no-repeat center center/cover; /* Imagem de fundo */
-    color: #fff; /* Cor do texto */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('https://source.unsplash.com/1600x900/?galaxy,space') no-repeat center center/cover;
+    color: #fff;
 }
 
 .hero h1 {
-    font-size: 4rem; /* Tamanho grande para o título */
-    margin: 0; /* Remove a margem */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra para destacar o título */
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
-    font-size: 1.5rem; /* Tamanho de fonte para o parágrafo */
-    margin: 1rem 0; /* Espaçamento acima e abaixo */
+    font-size: 1.5rem;
+    margin: 1rem 0;
 }
 
 .hero a {
-    display: inline-block; /* Faz o link se comportar como bloco */
-    padding: 0.75rem 1.5rem; /* Espaçamento interno do link */
-    background: #00c6ff; /* Cor de fundo azul */
-    color: #fff; /* Cor do texto branco */
-    border-radius: 5px; /* Borda arredondada */
-    text-decoration: none; /* Remove o sublinhado */
-    font-weight: bold; /* Texto em negrito */
-    transition: background 0.3s; /* Transição suave no fundo */
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #00c6ff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
 .hero a:hover {
-    background: #005792; /* Cor de fundo quando o mouse passa sobre */
+    background: #005792;
 }
 
 footer {
-    background: #000428; /* Cor de fundo do rodapé */
-    color: #fff; /* Cor do texto */
-    padding: 1rem 0; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    background: #000428;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+#Status {
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .container {
-    display: flex; /* Usando flexbox para alinhar os itens horizontalmente */
-    justify-content: space-between; /* Espaça as caixas igualmente (opcional) */
+    display: flex;
+    justify-content: space-between;
 }
 
 .box {
-    width: 45%; /* Largura das caixas */
-    height: 250px; /* Altura das caixas */
-    background: rgba(0, 198, 255, 0.6); /* Cor de fundo azul com 60% de opacidade */
-    color: #fff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    display: flex; /* Define que o conteúdo da caixa será flexível */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    text-align: center; /* Garante que o texto esteja centralizado */
+    width: 45%;
+    height: 250px;
+    background: rgb(255, 255, 255);
+    color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.chart-container {
+    width: 150px;
+    height: 150px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#Status {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+.social-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.social-button {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.social-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-button.whatsapp {
+    background-color: #25D366;
+}
+
+.social-button.facebook {
+    background-color: #1877F2;
+}
+
+.social-button.instagram {
+    background-color: #E1306C;
 }
